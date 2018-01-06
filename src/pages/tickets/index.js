@@ -21,6 +21,7 @@ class Tickets extends Component {
       subHeaderContainer,
       subHeaderText,
       contentContainer,
+      footer,
     } = styles;
 
     return (
@@ -33,7 +34,14 @@ class Tickets extends Component {
         </View>
         <ScrollView contentContainerStyle={contentContainer}>
           <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
         </ScrollView>
+        <View style={footer}>
+
+        </View>
       </View>
     );
   }

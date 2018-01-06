@@ -5,7 +5,8 @@ const styles = StyleSheet.create({
   container: {
     alignSelf: 'stretch',
     marginTop: 20,
-    padding: 20,
+    paddingHorizontal: 20,
+    paddingVertical: 20,
     backgroundColor: colors.white,
 
     shadowColor: colors.shadowCard,
@@ -21,6 +22,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     alignSelf: 'stretch',
+    marginBottom: 20,
   },
   arrowIcon: {
     width: 11,
@@ -29,13 +31,63 @@ const styles = StyleSheet.create({
 
   titleIda: {
     fontSize: fonts.regular,
-    fontWeight: 'bold',
+    fontFamily: 'Montserrat-Bold',
     color: colors.coolGrey,
   },
   titleIdaResult: {
     fontSize: fonts.small,
-    fontWeight: '500',
+    fontFamily: 'Montserrat-Bold',
     color: colors.coolGrey,
+  },
+
+  secondLine: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    alignSelf: 'stretch',
+  },
+  titleCompany: {
+    fontSize: fonts.medium,
+    letterSpacing: -0.34,
+    fontFamily: 'Montserrat-Bold',
+    color: colors.coolGrey,
+  },
+  titleMatch: {
+    fontSize: fonts.medium,
+    letterSpacing: -0.34,
+    fontFamily: 'Montserrat-Bold',
+    color: colors.coolGrey,
+  },
+  titleDuration: {
+    fontFamily: 'Montserrat-SemiBold',
+    color: colors.coolGrey,
+  },
+  titleArrival: {
+    fontSize: fonts.medium,
+    letterSpacing: -0.29,
+    fontFamily: 'Montserrat-Bold',
+    color: colors.coolGrey,
+  },
+
+  thirdLine: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    alignSelf: 'stretch',
+  },
+  thirdLineText: {
+    fontSize: fonts.small,
+    textAlign: 'center',
+    letterSpacing: -0.29,
+    fontFamily: 'Montserrat-Regular',
+    color: colors.coolGrey,
+  },
+
+  dividingLine: {
+    borderBottomWidth: 1,
+    borderBottomColor: colors.silver,
+    borderStyle: 'solid',
+    marginVertical: 15,
   },
 });
 

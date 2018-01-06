@@ -7,8 +7,8 @@ import PropTypes from 'prop-types';
 
 import styles from './styles';
 
-const Button = ({ title, onPress }) => (
-  <TouchableOpacity onPress={onPress} style={styles.container}>
+const Button = ({ title, onPress, buttonStyle }) => (
+  <TouchableOpacity onPress={onPress} style={[styles.container, buttonStyle]}>
     <Text style={styles.title}>{title}</Text>
   </TouchableOpacity>
 );

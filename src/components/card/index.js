@@ -7,14 +7,27 @@ import {
 
 import styles from './styles';
 
+import Button from '../button';
+
 const Card = () => {
   const {
     container,
+
     firstLine,
     arrowIcon,
-
     titleIda,
     titleIdaResult,
+
+    secondLine,
+    titleCompany,
+    titleMatch,
+    titleDuration,
+    titleArrival,
+
+    thirdLine,
+    thirdLineText,
+
+    dividingLine,
   } = styles;
 
   return (
@@ -27,6 +40,53 @@ const Card = () => {
         />
         <Text style={titleIdaResult}>Quarta, 08 de dezembro</Text>
       </View>
+
+      <View style={secondLine}>
+        <Text style={titleCompany}>GOL</Text>
+        <Text style={titleMatch}>06:55</Text>
+        <Text style={titleDuration}>1H55</Text>
+        <Text style={titleArrival}>07:51</Text>
+      </View>
+
+      <View style={thirdLine}>
+        <Text style={thirdLineText}>G3-9018</Text>
+        <Text style={thirdLineText}>CNF</Text>
+        <Text style={thirdLineText}>VOO DIRETO</Text>
+        <Text style={thirdLineText}>GIG</Text>
+      </View>
+
+      <View style={dividingLine} />
+
+      <View style={firstLine}>
+        <Text style={titleIda}>IDA</Text>
+        <Image
+          source={require('../../../assets/img/shapeRight.png')}
+          style={arrowIcon}
+        />
+        <Text style={titleIdaResult}>Quarta, 08 de dezembro</Text>
+      </View>
+
+      <View style={secondLine}>
+        <Text style={titleCompany}>GOL</Text>
+        <Text style={titleMatch}>06:55</Text>
+        <Text style={titleDuration}>1H55</Text>
+        <Text style={titleArrival}>07:51</Text>
+      </View>
+
+      <View style={thirdLine}>
+        <Text style={thirdLineText}>G3-9018</Text>
+        <Text style={thirdLineText}>CNF</Text>
+        <Text style={thirdLineText}>VOO DIRETO</Text>
+        <Text style={thirdLineText}>GIG</Text>
+      </View>
+
+      <View style={dividingLine} />
+
+      <Button
+        title="Comprar R$ 355,39"
+        buttonStyle={{ height: 35 }}
+        onPress={() => {}}
+      />
     </View>
   );
 };

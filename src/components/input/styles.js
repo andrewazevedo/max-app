@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
     height: 54,
     padding: 15,
     marginBottom: 20,
+    fontFamily: 'Montserrat-Medium',
     backgroundColor: colors.white,
     shadowColor: colors.shadow,
     shadowOffset: {

@@ -64,7 +64,7 @@ class Home extends Component {
           <Input placeholder="Quantidade de passageiros" />
 
           <Button
-            title="Pesquisar passagens"
+            title="Pesquisar passagem"
             onPress={this.onSearchButtonPress}
           />
         </View>

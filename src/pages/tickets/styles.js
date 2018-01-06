@@ -17,12 +17,27 @@ const styles = StyleSheet.create({
   },
   subHeaderText: {
     fontSize: fonts.small,
-    fontWeight: '500',
+    fontFamily: 'Montserrat-Bold',
     color: colors.white,
   },
   contentContainer: {
     paddingHorizontal: metrics.doubleBaseMargin,
     backgroundColor: colors.paleGrey,
+  },
+  footer: {
+    height: 40,
+    borderStyle: 'solid',
+    borderWidth: 1,
+    backgroundColor: colors.white,
+    borderColor: colors.silver,
+  },
+  footerTitle: {
+    fontFamily: 'Montserrat-Bold',
+    fontSize: fonts.small,
+    fontStyle: "normal",
+    letterSpacing: 0,
+    textAlign: "left",
+    color: colors.steelGrey,
   },
 });
 
