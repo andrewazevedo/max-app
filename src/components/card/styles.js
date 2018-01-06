@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
 
   titleIda: {
     fontSize: fonts.regular,
-    fontFamily: 'Montserrat-Bold',
+    fontFamily: 'Montserrat-ExtraBold',
     color: colors.coolGrey,
   },
   titleIdaResult: {
@@ -49,13 +49,13 @@ const styles = StyleSheet.create({
   titleCompany: {
     fontSize: fonts.medium,
     letterSpacing: -0.34,
-    fontFamily: 'Montserrat-Bold',
+    fontFamily: 'Montserrat-ExtraBold',
     color: colors.coolGrey,
   },
   titleMatch: {
     fontSize: fonts.medium,
     letterSpacing: -0.34,
-    fontFamily: 'Montserrat-Bold',
+    fontFamily: 'Montserrat-ExtraBold',
     color: colors.coolGrey,
   },
   titleDuration: {
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
   titleArrival: {
     fontSize: fonts.medium,
     letterSpacing: -0.29,
-    fontFamily: 'Montserrat-Bold',
+    fontFamily: 'Montserrat-ExtraBold',
     color: colors.coolGrey,
   },
 
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     fontSize: fonts.small,
     textAlign: 'center',
     letterSpacing: -0.29,
-    fontFamily: 'Montserrat-Regular',
+    fontFamily: 'Montserrat-Medium',
     color: colors.coolGrey,
   },
 

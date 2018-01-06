@@ -25,6 +25,9 @@ const styles = StyleSheet.create({
     backgroundColor: colors.paleGrey,
   },
   footer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
     height: 40,
     borderStyle: 'solid',
     borderWidth: 1,
@@ -32,12 +35,35 @@ const styles = StyleSheet.create({
     borderColor: colors.silver,
   },
   footerTitle: {
-    fontFamily: 'Montserrat-Bold',
+    fontFamily: 'Montserrat-Black',
     fontSize: fonts.small,
-    fontStyle: "normal",
     letterSpacing: 0,
-    textAlign: "left",
     color: colors.steelGrey,
+  },
+  footerSectionLeft: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingLeft: 25,
+  },
+  footerSectionRight: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingRight: 25,
+  },
+  filterIcon: {
+    width: 11,
+    height: 10,
+    marginRight: 5,
+  },
+  orderIcon: {
+    width: 11,
+    height: 11,
+    marginRight: 5,
+  },
+  footerDivisor: {
+    width: 1,
+    height: 40,
+    backgroundColor: colors.silver,
   },
 });
 

@@ -3,6 +3,8 @@ import {
   View,
   Text,
   ScrollView,
+  Image,
+  TouchableOpacity,
 } from 'react-native';
 
 import Header from '../../components/header';
@@ -22,6 +24,12 @@ class Tickets extends Component {
       subHeaderText,
       contentContainer,
       footer,
+      footerTitle,
+      footerSectionLeft,
+      footerSectionRight,
+      filterIcon,
+      orderIcon,
+      footerDivisor,
     } = styles;
 
     return (
@@ -40,7 +48,23 @@ class Tickets extends Component {
           <Card />
         </ScrollView>
         <View style={footer}>
+          <TouchableOpacity style={footerSectionLeft}>
+            <Image
+              style={filterIcon}
+              source={require('../../../assets/img/filter.png')}
+            />
+            <Text style={footerTitle}>FILTRAR</Text>
+          </TouchableOpacity>
 
+          <View style={footerDivisor} />
+
+          <TouchableOpacity style={footerSectionRight}>
+            <Image
+              style={orderIcon}
+              source={require('../../../assets/img/order.png')}
+            />
+            <Text style={footerTitle}>ORDENAR</Text>
+          </TouchableOpacity>
         </View>
       </View>
     );
