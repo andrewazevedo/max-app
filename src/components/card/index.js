@@ -9,7 +9,7 @@ import styles from './styles';
 
 import Button from '../button';
 
-const Card = () => {
+const Card = ({ item }) => {
   const {
     container,
 
@@ -42,15 +42,23 @@ const Card = () => {
       </View>
 
       <View style={secondLine}>
-        <Text style={titleCompany}>GOL</Text>
-        <Text style={titleMatch}>06:55</Text>
-        <Text style={titleDuration}>1H55</Text>
-        <Text style={titleArrival}>07:51</Text>
+        <View style={{ width: 60, alignItems: 'center' }}>
+          <Text style={titleCompany}>{item.airline}</Text>
+        </View>
+        <View style={{ alignSelf: 'stretch', alignItems: 'center' }}>
+          <Text style={titleMatch}>{item.deptime}</Text>
+        </View>
+        <View style={{ alignSelf: 'stretch', alignItems: 'center' }}>
+          <Text style={titleDuration}>{item.duration}</Text>
+        </View>
+        <View style={{ alignSelf: 'stretch', alignItems: 'center' }}>
+          <Text style={titleArrival}>{item.arrtime}</Text>
+        </View>
       </View>
 
       <View style={thirdLine}>
         <Text style={thirdLineText}>G3-9018</Text>
-        <Text style={thirdLineText}>CNF</Text>
+        <Text style={thirdLineText}>{item.origin}</Text>
         <Text style={thirdLineText}>VOO DIRETO</Text>
         <Text style={thirdLineText}>GIG</Text>
       </View>
@@ -58,9 +66,9 @@ const Card = () => {
       <View style={dividingLine} />
 
       <View style={firstLine}>
-        <Text style={titleIda}>IDA</Text>
+        <Text style={titleIda}>VOLTA</Text>
         <Image
-          source={require('../../../assets/img/shapeRight.png')}
+          source={require('../../../assets/img/shapeLeft.png')}
           style={arrowIcon}
         />
         <Text style={titleIdaResult}>Quarta, 08 de dezembro</Text>
@@ -83,7 +91,7 @@ const Card = () => {
       <View style={dividingLine} />
 
       <Button
-        title="Comprar R$ 355,39"
+        title={`Comprar R$ ${item.fare.totalfare}`}
         buttonStyle={{ height: 35 }}
         onPress={() => {}}
       />

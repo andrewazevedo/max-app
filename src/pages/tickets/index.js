@@ -6,6 +6,8 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import Header from '../../components/header';
 import Card from '../../components/card';
@@ -16,6 +18,22 @@ class Tickets extends Component {
   static navigationOptions = {
     header: props => <Header {...props} title="pesquisar passagem" />
   };
+
+  renderList = () => {
+    console.log(this.props.navigation.state.params.data);
+    this.props.navigation.state.params.data.length
+      ? this.renderCards()
+      : <Text>Carregando...</Text>
+  };
+
+  renderCards = () => (
+    this.props.navigation.state.params.data.map((item, index) => (
+      <Card
+        key={index}
+        item={item}
+      />
+    ))
+  );
 
   render() {
     const {
@@ -41,11 +59,7 @@ class Tickets extends Component {
           <Text style={subHeaderText}>Chegada</Text>
         </View>
         <ScrollView contentContainerStyle={contentContainer}>
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {this.renderCards()}
         </ScrollView>
         <View style={footer}>
           <TouchableOpacity style={footerSectionLeft}>
@@ -71,4 +85,13 @@ class Tickets extends Component {
   }
 }
 
-export default Tickets;
+const mapStateToProps = ({ home }) => {
+  const {
+    flights,
+  } = home;
+  return {
+    flights,
+  };
+};
+
+export default connect(mapStateToProps)(Tickets);
