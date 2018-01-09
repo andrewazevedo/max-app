@@ -6,9 +6,6 @@ import './config/reactotron';
 import AppNavigator from './routes';
 import reducers from './reducers';
 
-// APP ID: 821755b9
-// APP KEY: 1d3f631a8a7cff11f9606ecd2b9adbe3
-
 const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
 
 class App extends Component {
