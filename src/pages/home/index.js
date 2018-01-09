@@ -10,6 +10,7 @@ import {
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { TextInputMask } from 'react-native-masked-text';
 
 import {
   iataOriginChanged,
@@ -24,6 +25,7 @@ import styles from './styles';
 import { metrics } from '../../styles';
 
 import Input from '../../components/input';
+import DateInput from '../../components/inputMask';
 import Button from '../../components/button';
 
 class Home extends Component {
@@ -149,13 +151,14 @@ class Home extends Component {
           />
 
           <View style={dateContainer}>
-            <Input
+            <DateInput
               inputStyle={{ width: metrics.screenWidth * 0.43 }}
               placeholder="Data de ida"
               onChangeText={this.onDateDepartureChange}
               value={dateDeparture}
             />
-            <Input
+
+            <DateInput
               inputStyle={{ width: metrics.screenWidth * 0.43 }}
               placeholder="Data de volta"
               onChangeText={this.onDateArrivalChange}

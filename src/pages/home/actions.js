@@ -63,10 +63,18 @@ export const amountPeopleChanged = (number) => {
 };
 
 export const searchTickets = (data) => {
+
+  const departure = data.dateDeparture.split('/');
+  const departureFormated = `${departure[2]}${departure[1]}${departure[0]}`;
+
+  const arrival = data.dateArrival.split('/');
+  const arrivalFormated = `${arrival[2]}${arrival[1]}${arrival[0]}`;
+
+
   return async (dispatch) => {
     dispatch({ type: FETCH_FLIGHTS });
 
-    const response = await axios.get(`${BASE_URL}/search/?app_id=${APP_ID}&app_key=${APP_KEY}&format=json&source=${data.iataOrigin}&destination=${data.iataDestiny}&dateofdeparture=${data.dateDeparture}&dateofarrival=${data.dateArrival}&seatingclass=E&adults=${data.amountPeople}&children=0&infants=0&counter=100`);
+    const response = await axios.get(`${BASE_URL}/search/?app_id=${APP_ID}&app_key=${APP_KEY}&format=json&source=${data.iataOrigin}&destination=${data.iataDestiny}&dateofdeparture=${departureFormated}&dateofarrival=${arrivalFormated}&seatingclass=E&adults=${data.amountPeople}&children=0&infants=0&counter=100`);
 
     dispatch({
       type: FETCH_FLIGHTS_SUCCESS,
