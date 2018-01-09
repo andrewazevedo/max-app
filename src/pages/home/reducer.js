@@ -35,7 +35,12 @@ export default (state = INITIAL_STATE, action) => {
     case FETCH_FLIGHTS:
       return { ...state, loading: true };
     case FETCH_FLIGHTS_SUCCESS:
-      return { ...state, flights: action.payload, loading: false };
+      return {
+        ...state,
+        ...INITIAL_STATE,
+        flights: action.payload,
+        loading: false,
+      };
     case FETCH_FLIGHTS_FAIL:
       return { ...state, error: 'Deu ruim', loading: false };
     default:

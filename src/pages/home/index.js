@@ -5,6 +5,7 @@ import {
   View,
   Image,
   ActivityIndicator,
+  Text,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -48,35 +49,56 @@ class Home extends Component {
     loading: PropTypes.bool.isRequired,
   };
 
+  state = {
+    warning: '',
+  };
+
   onIataOriginChange = (text) => {
+    this.setState({ warning: '' });
     this.props.iataOriginChanged(text);
   }
 
   onIataDestinyChange = (text) => {
+    this.setState({ warning: '' });
     this.props.iataDestinyChanged(text);
   }
 
   onDateDepartureChange = (text) => {
+    this.setState({ warning: '' });
     this.props.dateDepartureChanged(text);
   }
 
   onDateArrivalChange = (text) => {
+    this.setState({ warning: '' });
     this.props.dateArrivalChanged(text);
   }
 
   onAmountPeopleChange = (number) => {
+    this.setState({ warning: '' });
     this.props.amountPeopleChanged(number);
   }
 
   onSearchButtonPress = () => {
-    this.props.searchTickets(this.props.home);
+    const {
+      iataOrigin,
+      iataDestiny,
+      dateDeparture,
+      dateArrival,
+      amountPeople,
+    } = this.props;
+
+    if (!iataOrigin || !iataDestiny || !dateDeparture || !dateArrival || !amountPeople) {
+      this.setState({ warning: 'Complete todos os campos' });
+    } else {
+      this.props.searchTickets(this.props.home);
+    }
   }
 
-  isValid() {
-	  let valid = this.refs['myDateText'].isValid()
-
-		let rawValue = this.refs['myDateText'].getRawValue()
-	}
+  renderWarning = () => (
+    <View style={styles.warningContainer}>
+      <Text style={styles.warningText}>{this.state.warning}</Text>
+    </View>
+  )
 
   render() {
     const {
@@ -147,6 +169,12 @@ class Home extends Component {
             value={amountPeople}
             keyboardType="numeric"
           />
+
+          {
+            this.state.warning
+              ? this.renderWarning()
+              : null
+          }
 
           {
             loading

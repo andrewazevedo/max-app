@@ -3,6 +3,7 @@ import { colors, metrics, fonts } from '../../styles';
 
 const styles = StyleSheet.create({
   container: {
+    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     height: 54.1,
@@ -17,10 +18,15 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
   },
   title: {
+    marginLeft: 10,
     fontSize: fonts.medium,
     fontFamily: 'Montserrat-Bold',
     fontWeight: 'bold',
     color: colors.white,
+  },
+  icon: {
+    width: 13,
+    height: 13,
   },
 });
 

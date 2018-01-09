@@ -19,7 +19,7 @@ const Input = ({
   keyboardType,
   autoCapitalize,
 }) => (
-  <View>
+  <View style={styles.container}>
     <TextInput
       style={[styles.inputContainer, inputStyle]}
       placeholder={placeholder}
