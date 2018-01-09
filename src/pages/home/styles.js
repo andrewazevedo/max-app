@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { metrics, colors } from '../../styles';
+import { metrics, colors, fonts } from '../../styles';
 
 const styles = StyleSheet.create({
   container: {
@@ -23,6 +23,16 @@ const styles = StyleSheet.create({
   dateContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+  },
+
+  warningContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingBottom: 20,
+  },
+  warningText: {
+    fontSize: fonts.medium,
+    fontFamily: 'Montserrat-Bold',
   },
 });
 

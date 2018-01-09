@@ -1,15 +1,14 @@
 import React from 'react';
 import {
-  TextInput,
-  Image,
   View,
 } from 'react-native';
 import PropTypes from 'prop-types';
+import { TextInputMask } from 'react-native-masked-text';
 import styles from './styles';
 
 import { colors } from '../../styles';
 
-const Input = ({
+const DateInput = ({
   placeholder,
   inputStyle,
   onChangeText,
@@ -20,7 +19,7 @@ const Input = ({
   autoCapitalize,
 }) => (
   <View style={styles.container}>
-    <TextInput
+    <TextInputMask
       style={[styles.inputContainer, inputStyle]}
       placeholder={placeholder}
       placeholderTextColor={colors.coolGrey}
@@ -31,14 +30,18 @@ const Input = ({
       maxLength={maxLength}
       keyboardType={keyboardType}
       autoCapitalize={autoCapitalize}
+      type={'datetime'}
+      options={{
+        format: 'DD/MM/YYYY'
+      }}
     />
   </View>
 );
 
-Input.propTypes = {
+DateInput.propTypes = {
   placeholder: PropTypes.string.isRequired,
   onChangeText: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired,
 };
 
-export default Input;
+export default DateInput;
